@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<title>Angular test</title>
+	</head>
+	<body>
+		<form ng-init="todos=[]" ng-submit="todos.push(newTodo); newTodo = ''">
+			<input ng-model="newTodo" placeholder="Enter your todo" />
+		</form>
+		<ul>
+			<li ng-repeat="todo in todos | filter:search">
+				{{todo}}
+			</li>
+		</ul>
+		<div ng-show="todos.length">
+			<hr />
+			<input ng-model="search" placeholder="Filter todos" />
+		</div>
+		<script src="../angular.min.js"></script>
+	</body>
+</html>
